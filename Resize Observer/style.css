@@ -1,0 +1,6 @@
+.row .col-md-6:first-child {
+  background: rebeccapurple;
+}
+.row .col-md-6:last-child {
+  background: wheat;
+}
