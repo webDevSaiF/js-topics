@@ -1,0 +1,91 @@
+@import url("https://ghlcusomizer.s3.amazonaws.com/font_awesome/css/all_with_font.css");
+
+section {
+  max-width: 400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+h2 {
+  font-size: 16px;
+  text-transform: capitalize !important;
+}
+.fc-dropdown-container {
+  background: #fff;
+  border-radius: 0.5rem;
+  min-height: 47px;
+  position: relative;
+  border: 1px solid #ccc;
+  transition: all 0.4s ease;
+}
+
+.fc-options-container {
+  background: #f8f9fa;
+  /* padding: 0.5rem 1rem; */
+  display: none;
+  flex-direction: column;
+  gap: 9px;
+  border-radius: 0.5rem;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.fc-dropdown-container:hover .fc-options-container,
+.fc-dropdown-container:hover .fc-options-container {
+  display: flex;
+  max-height: 300px;
+  overflow: auto;
+}
+.fc-selected-container {
+  padding: 0.3rem 0.8rem;
+  min-height: 47px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.fc-options-container .fc-option,
+.fc-selected-container .fc-option {
+  background: #e2e3e5;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  max-width: fit-content;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 0;
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.fc-options-container .fc-option {
+  margin-left: 0.7rem;
+}
+.fc-options-container .fc-option:first-child {
+  margin-top: 0.7rem;
+}
+.fc-options-container .fc-option:last-child {
+  margin-bottom: 0.7rem;
+}
+.fc-options-container .fc-option::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 500;
+  color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.fc-selected-container .fc-option::after {
+  content: "\f00d";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 500;
+  color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
