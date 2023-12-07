@@ -1,1 +1,1 @@
-Live Preview Link --> https://random-joke-generator-saif.netlify.app/
+Live Preview Link --> https://dictionary-app-saif.netlify.app/
