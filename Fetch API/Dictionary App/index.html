@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section>
+      <audio class="word-sound"></audio>
+      <audio class="phonetic-sound"></audio>
+      <div class="wrapper">
+        <div class="search-container">
+          <form>
+            <input type="text" placeholder="Search Word Here..." required />
+            <button>Search</button>
+          </form>
+        </div>
+        <div class="result-container">
+          <div class="word-container">
+            <h3>Word</h3>
+          </div>
+          <div class="details-container">
+            <p>pos</p>
+            <div class="sub-details-container">
+              <p>/phonetics/</p>
+              <button>
+                <i class="fas fa-volume volume"></i>
+              </button>
+            </div>
+          </div>
+          <p class="word-meaning">Word definition will show here...</p>
+          <p class="word-example">Word Examples will show here...</p>
+        </div>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>
