@@ -11,7 +11,6 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 function printData(data) {
-  const { word, phonetic, phonetics, meanings } = data[0];
   const printWord = mainContainer.querySelector(".word-container h3");
   const printPhonetic = mainContainer.querySelector(
     ".details-container > div > p"
@@ -23,8 +22,9 @@ function printData(data) {
   const phoneticSoundPlayButton = mainContainer.querySelector(
     ".sub-details-container button"
   );
-
-  printWord.textContent = word;
+  if (!data[0]) return (printWord.textContent = "Word Not Found");
+  const { word, phonetic, phonetics, meanings } = data[0];
+  if (word) printWord.textContent = word;
 
   if (!phonetic) {
     printPhonetic.textContent = phonetics[1]["text"];
