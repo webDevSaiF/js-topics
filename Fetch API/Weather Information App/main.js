@@ -41,6 +41,17 @@ function getLocation(city, latitude, longitude) {
       console.log(err);
     });
 
+  function timeLoad(obj, el) {
+    const { timezone } = obj;
+    const currentTime = new Date();
+    const gmtTime = new Date(currentTime.getTime() - timezone * 1000);
+    const hours = gmtTime.getUTCHours();
+    const minutes = gmtTime.getUTCMinutes();
+    const ampm = hours <= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    el.innerText = `${formattedHours}:${formattedMinutes} ${ampm}`;
+  }
   // PRINTING DATA
   function printData(obj) {
     if (obj.message) return createErrorMessage(obj.message);
@@ -53,20 +64,7 @@ function getLocation(city, latitude, longitude) {
     weatherLocationName.innerText = obj.name + ", " + country;
 
     // GET & SET GLOBAL TIME
-    function timeLoad() {
-      const { timezone } = obj;
-      const currentTime = new Date();
-      const gmtTime = new Date(currentTime.getTime() - timezone * 1000);
-      const hours = gmtTime.getUTCHours();
-      const minutes = gmtTime.getUTCMinutes();
-      const ampm = hours <= 12 ? "PM" : "AM";
-      const formattedHours = hours % 12 || 12;
-      const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-
-      locationTime.innerText = `${formattedHours}:${formattedMinutes} ${ampm}`;
-    }
-    timeLoad();
-    setInterval(timeLoad, 30000);
+    timeLoad(obj, locationTime);
 
     // SET TEMPERATURE
     const weatherLocationTemp = document.querySelector(".showTemp");
